@@ -1,10 +1,20 @@
-FROM aarch64/ubuntu:yakkety
+FROM aarch64/alpine:edge
 
-RUN add-apt-repository -y ppa:ethereum/ethereum
-RUN apt-get update && apt-get upgrade -y
-RUN apt-get install -y wget nano ethereum
+ARG GETH_VERSION=v1.5.5
+ARG NODE_USER=someone
 
+RUN echo user ${NODE_USER} build geth version ${GETH_VERSION}
 
-ENTRYPOINT ["/geth","--light","--identity","gilles"]
+RUN \
+  apk add --update go git make gcc musl-dev && \
+  git clone -b ${GETH_VERSION}  --depth 1 https://github.com/ethereum/go-ethereum && \
+  (cd go-ethereum && make geth) && \
+  cp go-ethereum/build/bin/geth /geth && \
+  apk del go git make gcc musl-dev && \
+  rm -rf /go-ethereum && rm -rf /var/cache/apk/*
 
-EXPOSE 8545 8546 30303
+EXPOSE 8545
+EXPOSE 8546
+EXPOSE 30303
+
+ENTRYPOINT ["/geth","--light","--identity",${NODE_USER},"--warp","--datadir","/chain","--rpc","--ws"]
