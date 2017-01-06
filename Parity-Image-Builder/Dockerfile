@@ -12,6 +12,6 @@ RUN echo ${NODE_USER} builds ${PARITY_PACKAGE} \
   && dpkg -i ${PARITY_PACKAGE} \
   && rm ${PARITY_PACKAGE}
 
-ENTRYPOINT ["parity","--db-path","/chain","--pruning","fast","--identity",${NODE_USER}]
+ENTRYPOINT ["parity","--db-path","/chain","--pruning","fast","--identity","SPDT"]
 
 EXPOSE 8080 8545 8180
