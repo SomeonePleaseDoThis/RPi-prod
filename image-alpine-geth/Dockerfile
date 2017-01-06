@@ -17,4 +17,4 @@ EXPOSE 8545
 EXPOSE 8546
 EXPOSE 30303
 
-ENTRYPOINT ["/geth","--light","--identity",${NODE_USER},"--warp","--datadir","/chain","--rpc","--ws"]
+ENTRYPOINT ["/geth","--light","--identity",${NODE_USER},"--datadir","/chain","--rpc","--ws"]
