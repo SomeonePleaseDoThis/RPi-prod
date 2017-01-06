@@ -16,4 +16,6 @@ docker build --no-cache \
   https://github.com/SomeonePleaseDoThis/RPi-prod.git#master:Parity-Image-Builder
 
 docker tag $parity_image_name:$parity_version $docker_hub_orga/$parity_image_name:$parity_version
+docker tag $parity_image_name:$parity_version $docker_hub_orga/$parity_image_name:latest
 docker push $docker_hub_orga/$parity_image_name:$parity_version
+docker push $docker_hub_orga/$parity_image_name:latest
