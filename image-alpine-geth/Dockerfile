@@ -14,4 +14,4 @@ RUN echo user ${NODE_USER} build geth version ${GETH_VERSION} && \
 
 EXPOSE 8545 8546 30303
 
-ENTRYPOINT ["/geth","--light","--identity",${NODE_USER},"--datadir","/chain","--rpc","--ws"]
+ENTRYPOINT ["/geth","--light","--identity","SPDT","--datadir","/chain","--rpc","--ws"]
