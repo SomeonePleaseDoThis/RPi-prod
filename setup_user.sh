@@ -1,6 +1,7 @@
 #configure opensuse
 echo "set root password"
 passwd root
+echo $1 > /etc/hostname
 useradd -m -G wheel $0
 echo "set user pwd"
 passwd $0
