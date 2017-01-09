@@ -4,7 +4,7 @@ passwd root
 useradd -m -G wheel $0
 echo "set user pwd"
 passwd $0
-zypper in docker
+zypper in docker htop nano
 systemctl start docker
 docker run hello-world
 systemctl enable docker
