@@ -5,5 +5,5 @@ RUN apt-get update && apt-get upgrade && \
 RUN wget https://static.rust-lang.org/rustup/rustup-init.sh && sh rustup_init.sh && \
   git clone --branch v1.4.9 https://github.com/ethcore/parity && \
   cd parity && \
-  /root/.cargo/bin/cargo build --release build --release
+  /root/.cargo/bin/cargo build --release build --release --jobs 3
 
