@@ -7,7 +7,7 @@ ARG NODE_USER=someone
 
 RUN echo ${NODE_USER} builds ${PARITY_PACKAGE} \
   && apt-get update && apt-get upgrade -y \
-  && apt-get install -y wget nano libssl1.0.0 libsslcommon2 \
+  && apt-get install -y wget nano libssl-dev \
   && wget ${PARITY_PKG_PATH} \
   && dpkg -i ${PARITY_PACKAGE} \
   && rm ${PARITY_PACKAGE}
