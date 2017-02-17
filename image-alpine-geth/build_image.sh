@@ -1,5 +1,5 @@
 local_image_name="geth-alpine64"
-local_image_tag="1.5.8"
+local_image_tag="1.5.9"
 remote_image_name="geth64"
 remote_image_tag=$local_image_tag-alpine
 docker_hub_orga="spdt"
