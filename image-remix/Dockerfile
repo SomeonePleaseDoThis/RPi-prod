@@ -1,7 +1,9 @@
-FROM aarch64/node:6.9.5
+FROM aarch64/node:7.5
 
-RUN git clone https://github.com/ethereum/remix
-RUN cd remix && npm install && npm run build && npm run start_node
+RUN git clone --depth=50 https://github.com/ethereum/browser-solidity.git ethereum/browser-solidity &&
+  npm install && 
+  npm run build && 
+  npm run start_node
 RUN npm install http-server -g
 
 ENTRYPOINT ["http-server", "index.html"]
