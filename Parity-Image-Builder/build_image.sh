@@ -3,9 +3,11 @@ container_chain_path=chain
 
 parity_source="http://d1h4xl4cr1h0mo.cloudfront.net/v1.5.3/aarch64-unknown-linux-gnu/parity_1.5.3_arm64.deb"
 parity_package=$(echo $parity_source | egrep -o "parity_[0-9]+.[0-9]+.[0-9]+_arm64.deb")
+echo $parity_package
 
 parity_image_name="parity64"
 parity_version=$(echo $parity_package | egrep -o "[0-9]+.[0-9]+.[0-9]+")
+echo $parity_version
 docker_hub_orga="spdt"
 
 docker build --no-cache \
