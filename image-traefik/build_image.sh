@@ -2,7 +2,7 @@ local_image_name="traefik64"
 remote_image_name=$local_image_name
 docker_hub_orga="spdt"
 
-traefik_binary="https://github.com/containous/traefik/releases/download/v1.1.2/traefik_linux-arm64"
+traefik_binary="https://github.com/containous/traefik/releases/download/v1.2.0/traefik_linux-arm64"
 traefik_version=$(echo $traefik_binary | egrep -o "[0-9]+.[0-9]+.[0-9]+")
 
 echo $USER builds traefik version $traefik_version
