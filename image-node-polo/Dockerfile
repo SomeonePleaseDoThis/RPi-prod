@@ -6,7 +6,8 @@ ARG NODE_PKG_PATH=7.7.1-slim
 RUN echo is building from ${NODE_PKG_PATH} \
   && apt-get update && apt-get install -y git
 
-RUN npm install --save web3 vue vue-wamp autobahn
+RUN npm install --save web3 vue vue-wamp autobahn \
+  && npm install -g nodemon
 
 VOLUME /usr/src/app
 WORKDIR /usr/src/app
