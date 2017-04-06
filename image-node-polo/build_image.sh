@@ -7,8 +7,8 @@ echo ${node_version}
 docker_hub_orga="spdt"
 
 docker build --no-cache \
-  --tag=${node_image_name}:${node_version} \
-  --build-arg NODE_VERSION=${node_version} \
+  --tag=${node_image_name}:$node_version \
+  --build-arg NODE_VERSION=$node_version \
   --build-arg NODE_PKG_PATH=${node_source} \
   https://github.com/SomeonePleaseDoThis/RPi-prod.git#master:image-node-polo
 
