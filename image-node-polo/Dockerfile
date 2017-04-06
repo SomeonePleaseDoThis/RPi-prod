@@ -1,7 +1,14 @@
-FROM aarch64/node:7.7.1-slim
+FROM aarch64/node:7.7.2-slim
 
-RUN apt-get update && apt-get install -y git
+ARG NODE_VERSION=7.7.1
+ARG NODE_PKG_PATH=7.7.1-slim
+
+RUN echo is building from ${NODE_PKG_PATH} \
+  apt-get update && apt-get install -y git
 
 RUN npm install --save web3 vue vue-wamp autobahn
 
-EXPOSE 8080
+VOLUME /usr/src/app
+WORKDIR /usr/src/app
+
+EXPOSE 8083
