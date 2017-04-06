@@ -1,4 +1,4 @@
-node_source="7.7.2-slim"
+node_source="7.7.20-slim"
 node_version=$(echo ${node_source} | egrep -o "[0-9]+.[0-9]+.[0-9]+")
 echo ${node_package}
 
