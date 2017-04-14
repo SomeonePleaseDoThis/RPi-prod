@@ -1,7 +1,7 @@
 host_chain_path=/home/gilles/chain
 container_chain_path=chain
 
-parity_source="http://d1h4xl4cr1h0mo.cloudfront.net/v1.6.5/aarch64-unknown-linux-gnu/parity_1.6.5_arm64.deb"
+parity_source="http://d1h4xl4cr1h0mo.cloudfront.net/v1.6.6/aarch64-unknown-linux-gnu/parity_1.6.6_arm64.deb"
 parity_package=$(echo $parity_source | egrep -o "parity_[0-9]+.[0-9]+.[0-9]+_arm64.deb")
 echo $parity_package
 
